@@ -1,0 +1,15 @@
+a {
+    font-size: 24px;
+}
+
+a:hover {
+    background-color: pink;
+}
+
+a:focus {
+    background-color: tomato;
+}
+
+a:active {
+    background-color: red;
+}

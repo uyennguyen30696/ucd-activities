@@ -1,0 +1,1 @@
+Style and position the boxes

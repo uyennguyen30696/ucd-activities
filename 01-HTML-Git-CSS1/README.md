@@ -1,1 +1,0 @@
-Activities from UCD bootcamp
