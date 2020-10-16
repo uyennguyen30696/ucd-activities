@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissor game</title>
+</head>
+<body>
+    <script>
+        // Computer choice
+        var computerPick = ["r", "p", "s"];
+
+        // Variables that hold scores for win, loses, and ties (starting from 0)
+        var win = 0;
+        var lose = 0;
+        var tie = 0;
+
+        for (i = 0; i < 5; i++) {
+            // Randomly choose computer choice from the computerChoice array
+            var computerChoice = computerPick[Math.floor(Math.random() * computerPick.length)];
+
+            // Collect user choice and convert to lower case
+            var userChoice = prompt("Pick r, p, or s to play");
+            userChoice = userChoice.toLowerCase();
+
+            // Only run when the user picks a valid choice
+            if (userChoice === "r" || userChoice === "p" || userChoice === "s") {
+                alert("Computer's choise is " + computerChoice);
+            }
+            else {
+                alert("Please pick r, p, or s to start");
+            }
+
+            // Win/lose/tie conditions
+            if ((userChoice === "r" && computerChoice === "s") ||
+               (userChoice === "p" && computerChoice === "r") ||
+               (userChoice === "s" && computerChoice === "p")) {
+                win++;
+            }
+            else if ((userChoice === "r" && computerChoice === "p") ||
+               (userChoice === "p" && computerChoice === "s") ||
+               (userChoice === "s" && computerChoice === "r")) {
+                lose++;
+            }
+            else if ((userChoice === "r" && computerChoice === "r") ||
+               (userChoice === "p" && computerChoice === "p") ||
+               (userChoice === "s" && computerChoice === "s")) {
+                tie++;
+            }         
+        }
+
+        // Alert score
+        alert("You have won " + win++ + "times" + "\nYou have lost " + lose++ + "times" + "\nYou have tied " + tie ++ + "times");
+    </script>
+</body>
+</html>
