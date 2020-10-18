@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Redirect</title>
+</head>
+<body>
+    <script>
+
+        function getLocation() {
+            // Make sure browser supports this feature
+            if (navigator.geolocation) {
+                // Provide showPosition() function to getCurrentPosition
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                alert("Geolocation is not supported by the browser.");
+            }
+        }
+
+        function showPosition(position) {
+            // Get coordinates from the given object
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            console.log("Your coordinates are: Latitude " + lat + " Longitude " + lon);
+        
+            // Call the next function to pass on the coordinates
+            redirect(lat, lon);
+        }
+
+        // Compare coordinates 
+        function redirect(lat, lon) {
+            if (lat >= 30 && lon <= -100) {
+                window.location.href = "western.html";
+            }
+            else {
+                window.location.href = "eastern.html";
+            }
+        }
+
+        // Check if user is using Windows
+        if (navigator.userAgent.indexOf("Windows") !== -1) {
+            alert("Welcome, Windows user!");
+            getLocation();
+        }
+
+        // Check if user is using Mac
+        if (navigator.userAgent.indexOf("Mac") !== -1) {
+            alert("Welcome, Mac user!");
+            getLocation();
+        }
+
+        else {
+            alert("I don't know what you're using!");
+        }
+
+    </script>
+</body>
+</html>
