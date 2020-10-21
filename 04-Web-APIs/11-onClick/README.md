@@ -1,0 +1,2 @@
+The purpose of this activity is to create interactive buttons with onclick event. 
+One button decrements by 1 at a time when being clicked, and another increments by 1 at a time when being clicked. The lowest value is 0. 
